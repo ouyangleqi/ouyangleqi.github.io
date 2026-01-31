@@ -1,38 +1,17 @@
 ---
-title: Hello World
+title: 测试
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+这只是看看这个网站的运行情况>_<
+## 离散与连续
 
-## Quick Start
+我们看一个例子,当$n$很大时
 
-### Create a new post
+$$\sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6}\approx\frac{1}{3}n^3$$
+$$\int_{1}^{n} x^2 \,dx=\frac{1}{3}x^3|_{1}^{n}\approx\frac{1}{3}n^3$$
 
-``` bash
-$ hexo new "My New Post"
-```
+这启示我们在n充分大时可以用积分估计离散求和的主项，当然积分也可以用求和估计，那么
+对于$n^k$我们有
+$$\sum_{k=1}^{n}k^p\approx\int_{1}^{n}x^p \,dx\approx\frac{1}{p+1}x^{p+1}$$
+事实证明这是正确的(由**伯努利公式**便知），我们对于狄利克雷积分$\int \frac{sinx}{x}\,dx$就可以用其离散和估计
 
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+真是有趣啊~
